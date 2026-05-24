@@ -8,8 +8,7 @@
     <parent>
         <groupId>org.springframework.mobile</groupId>
         <artifactId>spring-mobile-parent</artifactId>
-        <version>2.0.0-BUILD-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <version>4.0.6</version>
     </parent>
 
     <artifactId>spring-mobile-autoconfigure</artifactId>
@@ -42,7 +41,7 @@
         </dependency>
 
         <!-- Optional Template Engines -->
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <optional>true</optional>
@@ -52,6 +51,7 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-groovy-templates</artifactId>
@@ -62,21 +62,22 @@
             <artifactId>spring-boot-starter-mustache</artifactId>
             <optional>true</optional>
         </dependency>
-
-        <!-- Jakarta Annotations -->
+-->
+        <!-- Jakarta Annotations-->
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
-            <version>${jakarta-annotation-api.version}</version>
+            <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
 
         <!-- Test Dependencies -->
-        <dependency>
+      <!--  <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        -->
     </dependencies>
 
 </project>

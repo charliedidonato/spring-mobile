@@ -38,7 +38,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 import org.springframework.web.servlet.view.groovy.GroovyMarkupViewResolver;
 import org.springframework.web.servlet.ViewResolver;
 
-import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+//import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 /**
  * {@link EnableAutoConfiguration Auto-configuration} for Spring Mobile's
@@ -89,7 +89,7 @@ public class DeviceDelegatingViewResolverAutoConfiguration {
 		}
 
 	}
-
+/*
 	@Configuration
 	@ConditionalOnClass(GroovyMarkupViewResolver.class)
 	protected static class DeviceDelegatingGroovyMarkupViewResolverConfiguration {
@@ -103,7 +103,7 @@ public class DeviceDelegatingViewResolverAutoConfiguration {
 		}
 
 	}
-
+*/
 	@Configuration
 	@ConditionalOnClass(InternalResourceViewResolver.class)
 	protected static class DeviceDelegatingJspViewResolverConfiguration {
@@ -117,7 +117,7 @@ public class DeviceDelegatingViewResolverAutoConfiguration {
 		}
 
 	}
-
+/*
 	@Configuration
 	@ConditionalOnClass(MustacheViewResolver.class)
 	protected static class DeviceDelegatingMustacheViewResolverConfiguration {
@@ -145,5 +145,7 @@ public class DeviceDelegatingViewResolverAutoConfiguration {
 		}
 
 	}
+	*/
+
 
 }

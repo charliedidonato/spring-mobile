@@ -16,9 +16,9 @@
 
 package org.springframework.mobile.device.site;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.web.util.CookieGenerator;
 import org.springframework.web.util.WebUtils;
@@ -29,14 +29,14 @@ import org.springframework.web.util.WebUtils;
  * Extends CookieGenerator to allow for fine-grained control over the cookie attributes.
  * @author Keith Donald
  */
-public class CookieSitePreferenceRepository extends CookieGenerator implements SitePreferenceRepository {
+public class CookieSitePreferenceRepository /*extends CookieGenerator*/ implements SitePreferenceRepository {
 
 	/**
 	 * Creates a cookie-based SitePreferenceRepository.
 	 * By default, the name of the cookie is <code>org.springframework.mobile.device.site.CookiteSitePreferenceRepository.SITE_PREFERENCE</code>
 	 */
 	public CookieSitePreferenceRepository() {
-		setCookieName(DEFAULT_COOKIE_NAME);
+		//setCookieName(DEFAULT_COOKIE_NAME);
 	}
 
 	/**
@@ -44,19 +44,20 @@ public class CookieSitePreferenceRepository extends CookieGenerator implements S
 	 * Allows for convenient specification of to a shared domain such as <code>.app.com</code>.
 	 */
 	public CookieSitePreferenceRepository(String cookieDomain) {
-		setCookieName(DEFAULT_COOKIE_NAME);
-		setCookieDomain(cookieDomain);
+	//	setCookieName(DEFAULT_COOKIE_NAME);
+	//	setCookieDomain(cookieDomain);
 	}
 
 	public void saveSitePreference(SitePreference preference, HttpServletRequest request, HttpServletResponse response) {
-		addCookie(response, preference.name());
+	//	addCookie(response, preference.name());
 	}
 
 	public SitePreference loadSitePreference(HttpServletRequest request) {
-		Cookie cookie = WebUtils.getCookie(request, getCookieName());
+		Cookie cookie = WebUtils.getCookie(request, "");
 		return cookie != null ? SitePreference.valueOf(cookie.getValue()) : null;
 	}
 
 	private static final String DEFAULT_COOKIE_NAME = CookieSitePreferenceRepository.class.getName() + ".SITE_PREFERENCE";
+
 
 }
